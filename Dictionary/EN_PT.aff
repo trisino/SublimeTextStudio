@@ -88,6 +88,15 @@ BREAK -SC$
 BREAK -SE$
 BREAK -TO$
 
+# compound rules:
+# 1. [0-9]*1[0-9]th (10th, 11th, 12th, 56714th, etc.)
+# 2. [0-9]*[02-9](1st|2nd|3rd|[4-9]th) (21st, 22nd, 123rd, 1234th, etc.)
+COMPOUNDRULE 2
+COMPOUNDRULE n*1t
+COMPOUNDRULE n*mp
+
+ICONV 1
+ICONV ’ '
 
 #   Número máximo de sugestões
 MAXNGRAMSUGS 12
@@ -100,27 +109,28 @@ WORDCHARS -
 CHECKCOMPOUNDREP
 
 # melhorar a sugestão de palavras
-REP 385
-REP -           s-
+REP 470
+REP -           _
 REP -           r
 REP -           s
+REP -           s-
 REP -a-         _a_
 REP -com-       _com_
 REP -da-        _da_
 REP -de-        _de_
 REP -l          l
-REP a           á
-REP a           ã
-REP a           â
-REP ã           â
-REP â           ã
+REP Khmer       Cambojano
+REP Kwanyama    Cuanhama
+REP Quait       Kuwait
 REP a           a-
-REP á           á-
-REP ã           ã-
 REP a           a-h
+REP a           a_
+REP a           á
+REP a           â
+REP a           ã
+REP a ei
+REP a ey
 REP a-          a
-REP á-          á
-REP ã-          ã
 REP a-h         a
 REP ackup       ecape
 REP ad          izad
@@ -128,32 +138,30 @@ REP ada         ável
 REP adas        áveis
 REP ado         ável
 REP ados        áveis
-REP ãe          ão
-REP ãe          õe
 REP agu         águ
+REP ai ie
 REP ainers      êineres
+REP air are
+REP air ear
+REP air ere
 REP ala         á-la
 REP ala         á-las
 REP alh         áli
 REP all         ol
 REP alo         á-lo
 REP alos        á-los
-REP am          ã
 REP am          an
-REP âm          ân
+REP am          ã
 REP am          ão
-REP an          ã
 REP an          am
-REP ân          âm
-REP ão          ãe
+REP an          ã
 REP ao          ão
-REP ão          õe
 REP aqu         áqu
-REP ára-        ara
+REP are air
+REP are ear
+REP are eir
 REP ars         raç
-REP ás          az
 REP athlon      átlon
-REP áudio-      audio
 REP ayout       eiaute
 REP az          ás
 REP azinh       inh
@@ -162,103 +170,120 @@ REP b-          b
 REP bakup       becape
 REP bilidade    lidade
 REP boy         bói
-REP btâ         bstâ
 REP bta         bstâ
-REP c           ç
+REP btâ         bstâ
 REP c           s
 REP c           sc
-REP ç           c
-REP ç           ss
+REP c           ç
 REP cao         ção
-REP cão         ção
-REP ção         mento
 REP cc          c
-REP cç          x
+REP cc k
 REP ce          sse
 REP ch          x
+REP ch k
+REP ch s
+REP ch te
+REP ch ti
+REP ch tu
 REP chi         qui
 REP ci          ssi
+REP ci s
 REP cie         sciê
 REP cinss       sinc
 REP ck          que
-REP cõ          çõ
-REP çõe         mento
 REP cs          x
-REP des         dis
-REP difissi     difíci
+REP cão         ção
+REP cç          x
+REP cõ          çõ
 REP defissio    difícil
+REP des         dis
+REP di j
+REP difissi     difíci
 REP difissio    difícil
 REP dis         des
-REP e           ê
-REP e           é
-REP éi          ei
-REP é           ê
-REP ê           é
 REP e           e-
-REP é           é-
-REP ê           ê-
 REP e           e-h
-REP é           é-h
+REP e           e_
+REP e           é
+REP e           ê
 REP e-          e
-REP é-          é
-REP é-          e
-REP ê-          ê
 REP e-h         e
-REP é-h         é
-REP ebã         ibã
+REP ear air
+REP ear are
+REP ear ere
+REP ear ier
+REP eau o
 REP ebam        ibã
 REP eban        ibã
+REP ebã         ibã
+REP ee i
 REP eem         êm
+REP ei a
+REP eir are
+REP eir ere
 REP el          éis
 REP elh         éli
 REP em          en
-REP ém          én
-REP êm          ên
 REP en          em
-REP én          ém
-REP ên          êm
 REP ensi        ênci
-REP épit        ept
+REP ere air
+REP ere ear
+REP ere eir
 REP ereo        eoro
 REP erug        irurg
 REP es          ex
 REP es          ez
-REP ês          ez
-REP ês          ez
+REP ew o
+REP ew oo
+REP ew u
+REP ew ue
+REP ew ui
 REP ex          es
+REP ey a
 REP ez          es
 REP ez          és
 REP ez          ês
 REP ezinh       inh
+REP f           f.
+REP f gh
+REP f ph
 REP ffice       ffice.org
-REP gcoc        guecoque
-REP gem         mento
-REP gen         mento
-REP gkok        guecoque
+REP g           gu
 REP g           gue
 REP g           j
+REP gcoc        guecoque
+REP ge j
+REP gem         mento
+REP gen         mento
+REP gg j
+REP gh f
+REP gkok        guecoque
 REP gs          gues
 REP hak         acc
 REP hkek        queque
-REP i           í
-REP í           i
 REP i           i-
-REP í           í-
 REP i           i-h
+REP i           i_
+REP i           í
+REP i ee
+REP i igh
+REP i uy
 REP i-          i
-REP í-          í
 REP i-h         i
 REP ida         ível
 REP idas        íveis
 REP ido         ível
 REP idos        íveis
+REP ie ai
+REP ier ear
+REP ieu oo
+REP ieu u
 REP ifem        ífen
+REP igh i
 REP ilh         íli
 REP im          in
 REP impecíli    empecilh
-REP ím          ín
 REP in          im
-REP ín          ím
 REP in          não_
 REP inh         azinh
 REP inh         ezinh
@@ -267,28 +292,32 @@ REP inh         ozinh
 REP izad        ad
 REP j           g
 REP j           gi
+REP j di
+REP j ge
+REP j gg
 REP je          ge
-REP jê          gê
 REP ji          gi
-REP jí          gí
 REP jing        ji
+REP jê          gê
+REP jí          gí
+REP k cc
+REP k ch
+REP k qu
 REP ka          ca
-REP ká          cá
 REP ke          que
-REP kê          quê
-REP Khmer       Cambojano
 REP ki          qui
 REP kiwi        quiuí
 REP ko          co
 REP ku          cu
-REP Kwanyama    Cuanhama
+REP kw qu
+REP ká          cá
+REP kê          quê
 REP l           l-
-REP l           u
+REP l           l_
 REP l           u
 REP l-          l
 REP la          -la-
 REP las         -las-
-REP lç          ls
 REP leb         reb
 REP lg          l_G
 REP lhe         -lhe-
@@ -298,116 +327,118 @@ REP lidade      bilidade
 REP lo          -lo-
 REP los         -los-
 REP ls          lç
+REP lç          ls
 REP m           m-
+REP m           m_
 REP m-          m
 REP me          -me-
 REP mento       ção
 REP mento       çõe
+REP n           m_
 REP n           n-
 REP n-          n
-REP não-        in
-REP não-        ir
 REP nhe         in
 REP nhi         in
 REP nos         -nos-
-REP o           ó
-REP o           õ
-REP o           ô
-REP ó           ô
-REP ói          oi
-REP ô           ó
+REP não-        in
+REP não-        ir
 REP o           o-
-REP o           ó-
-REP ó           ó-
-REP ô           ô-
 REP o           o-h
-REP ó           ó-h
-REP o-eletrô    oeletro
+REP o           o_
+REP o           ó
+REP o           ó-
+REP o           ô
+REP o           õ
+REP o eau
+REP o ew
 REP o-          o
-REP ó-          o
-REP ó-          ó
-REP ô-          ô
+REP o-eletrô    oeletro
 REP o-h         o
-REP ó-h         ó
 REP obr         robl
-REP õe          ãe
-REP õe          ão
-REP ós-s        oss
+REP oe u
 REP ografista   ógrafo
 REP oi          ói
 REP oky         óqui
 REP olh         óli
 REP ologista    ólogo
 REP om          on
-REP óm          ón
-REP ôm          ôn
 REP on          om
-REP ón          óm
-REP ôn          ôm
+REP oo ew
+REP oo ieu
+REP oo u
+REP oo ui
 REP ozinh       inh
-REP pára-q      paraq
 REP perdo       perco
 REP ph          f
+REP ph f
 REP ping        pingue-pongue
 REP ping-pong   pingue-pongue
 REP pong        pingue-pongue
 REP pre         pré-
-REP Quait       Kuwait
-REP quinque     quinquê
-REP quinquê     quinquê
-REP quinqüe     quinque
-REP quinqüe     quinquê
-REP quinqüê     quinquê
-REP qüinque     quinque
-REP qüinque     quinquê
-REP qüinquê     quinquê
-REP quinqui     quinquí
-REP quinquí     quinquí
-REP quinqüi     quinqui
-REP quinqüi     quinquí
-REP quinqüí     quinquí
-REP qüinqui     quinqui
-REP qüinqui     quinquí
-REP qüinquí     quinquí
+REP pára-q      paraq
 REP q           que
 REP qs          ques
 REP qu          c
+REP qu k
+REP qu w
+REP quinque     quinquê
+REP quinqui     quinquí
+REP quinquê     quinquê
+REP quinquí     quinquí
+REP quinqüe     quinque
+REP quinqüe     quinquê
+REP quinqüi     quinqui
+REP quinqüi     quinquí
+REP quinqüê     quinquê
+REP quinqüí     quinquí
+REP qüinque     quinque
+REP qüinque     quinquê
+REP qüinqui     quinqui
+REP qüinqui     quinquí
+REP qüinquê     quinquê
+REP qüinquí     quinquí
 REP r           -
 REP r           r-
+REP r           r_
 REP r           rr
 REP r-          r
-REP rádio-      radio
-REP rça         rsa
 REP res-de      r-de
 REP revigoração revitalização
+REP ria-lhe     r-lhe-ia
+REP ria-lhes    r-lhes-ia
+REP ria-me      r-me-ia
+REP ria-nos     r-nos-ia
+REP ria-se      r-se-ia
+REP ria-te      r-te-ia
+REP ria-vos     r-vos-ia
+REP riam-lhe    r-lhe-iam
+REP riam-lhes   r-lhes-iam
+REP riam-me     r-me-iam
+REP riam-nos    r-nos-iam
+REP riam-te     r-te-iam
+REP riam-vos    r-vos-iam
 REP ridão       ridade
 REP ridõe       ridade
 REP rsa         rça
-REP ria-se      r-se-ia
-REP ria-me      r-me-ia
-REP ria-te      r-te-ia
-REP ria-lhe     r-lhe-ia
-REP ria-lhes    r-lhes-ia
-REP ria-nos     r-nos-ia
-REP ria-vos     r-vos-ia
-REP riam-me     r-me-iam
-REP riam-te     r-te-iam
-REP riam-lhe    r-lhe-iam
-REP riam-lhes   r-lhes-iam
-REP riam-nos    r-nos-iam
-REP riam-vos    r-vos-iam
+REP rádio-      radio
+REP rça         rsa
 REP s           -
 REP s           c
-REP s           ç
 REP s           s-
+REP s           s.
+REP s           s_
 REP s           z
+REP s           ç
+REP s ch
+REP s ci
+REP s ti
 REP s-          -
-REP s-chuvas    -chuvas
 REP s-          s
+REP s-chuvas    -chuvas
 REP s-papel     -papéis
 REP sc          c
-REP scann       escân
 REP scaners     escâneres
+REP scann       escân
 REP scanners    escâneres
 REP se          -se-
 REP selofo      celofa
@@ -416,76 +447,140 @@ REP septic      septing
 REP setec       septing
 REP sh          ch
 REP sh          che
+REP shun cion
+REP shun sion
+REP shun tion
 REP sie         sciê
 REP skat        esqueite
 REP skati       esqueiti
-REP sócio-      socio
-REP ss          ç
 REP ss          rs
+REP ss          ç
+REP ss z
 REP sse         ce
 REP ssi         ci
 REP stu         estú
+REP sócio-      socio
 REP te          -te-
+REP te ch
+REP ti ch
+REP ti s
 REP tic-tac     tique-taque
 REP tiv         tativ
 REP tiva        ta
 REP tivide      tividade
+REP tu ch
 REP u           l
-REP u           ú
-REP ú           u
 REP u           u-
+REP u           u_
+REP u           ú
+REP u ew
+REP u ieu
+REP u oe
+REP u oo
 REP u-          u
 REP uait        uwait
-REP uç          lç
-REP uç          ls
-REP üe          uê
-REP üê          uê
+REP ue ew
+REP uff ough
+REP ui ew
+REP ui oo
 REP ulh         úli
 REP um          un
-REP úm          ún
 REP un          um
-REP ún          úm
+REP uy i
+REP uç          ls
+REP uç          lç
 REP v           env
-REP vídeo-      video
-REP vídeos-     video
+REP v           v.
 REP vigoração   vigência
 REP vos         -vos-
-REP x           cç
+REP vídeo-      video
+REP vídeos-     video
+REP w qu
 REP x           ch
+REP x           cç
+REP x           x.
+REP x           x_
 REP ykjavík     iquiavique
 REP yongyang    ionguiangue
 REP z           s
 REP z           z-
+REP z           z_
+REP z ss
 REP z-          z
 REP zzavill     zavil
-REP g           gu
-REP -           _
-REP a           a_
+REP á           á-
 REP á           á_
+REP á-          á
+REP ára-        ara
+REP ás          az
+REP áudio-      audio
+REP â           ã
+REP âm          ân
+REP ân          âm
+REP ã           â
+REP ã           ã-
 REP ã           ã_
-REP e           e_
-REP é           é_
+REP ã-          ã
+REP ãe          ão
+REP ãe          õe
+REP ão          ãe
+REP ão          õe
+REP ç           c
+REP ç           ss
+REP ção         mento
+REP çõe         mento
 REP é           e_
+REP é           é-
+REP é           é-h
+REP é           é_
+REP é           ê
+REP é-          e
+REP é-          é
+REP é-h         é
+REP éi          ei
+REP ém          én
+REP én          ém
+REP épit        ept
+REP ê           é
+REP ê           ê-
 REP ê           ê_
-REP i           i_
+REP ê-          ê
+REP êm          ên
+REP ên          êm
+REP ês          ez
+REP í           i
+REP í           í-
 REP í           í_
-REP l           l_
-REP m           m_
-REP n           m_
-REP o           o_
+REP í-          í
+REP ím          ín
+REP ín          ím
 REP ó           o_
+REP ó           ó-
+REP ó           ó-h
 REP ó           ó_
+REP ó           ô
+REP ó-          o
+REP ó-          ó
+REP ó-h         ó
+REP ói          oi
+REP óm          ón
+REP ón          óm
+REP ós-s        oss
+REP ô           ó
+REP ô           ô-
 REP ô           ô_
-REP r           r_
-REP s           s_
-REP u           u_
+REP ô-          ô
+REP ôm          ôn
+REP ôn          ôm
+REP õe          ãe
+REP õe          ão
+REP ú           u
 REP ú           ú_
-REP x           x_
-REP z           z_
-REP f           f.
-REP s           s.
-REP v           v.
-REP x           x.
+REP úm          ún
+REP ún          úm
+REP üe          uê
+REP üê          uê
+
 
 
 # ================================================================
@@ -691,12 +786,107 @@ PFX û   0     micros  s
 PFX ü Y 1
 PFX ü   0     ex-     .
 
+PFX I Y 1
+PFX I   0     in         .
+
+PFX U Y 1
+PFX U   0     un         .
+
+PFX C Y 1
+PFX C   0     de          .
+
+PFX E Y 1
+PFX E   0     dis         .
+
+PFX F Y 1
+PFX F   0     con         .
+
+PFX K Y 1
+PFX K   0     pro         .
+
 
 
 # ================================================================
 # SUFIXOS - Representados pelo alfabeto maiúsculo+números
 #           ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
 # ================================================================
+
+
+SFX V N 2
+SFX V   e     ive        e
+SFX V   0     ive        [^e]
+
+SFX N Y 3
+SFX N   e     ion        e
+SFX N   y     ication    y 
+SFX N   0     en         [^ey] 
+
+SFX X Y 3
+SFX X   e     ions       e
+SFX X   y     ications   y
+SFX X   0     ens        [^ey]
+
+SFX H N 2
+SFX H   y     ieth       y
+SFX H   0     th         [^y] 
+
+SFX Y Y 1
+SFX Y   0     ly         .
+
+SFX G Y 2
+SFX G   e     ing        e
+SFX G   0     ing        [^e] 
+
+SFX J Y 2
+SFX J   e     ings       e
+SFX J   0     ings       [^e]
+
+SFX D Y 4
+SFX D   0     d          e
+SFX D   y     ied        [^aeiou]y
+SFX D   0     ed         [^ey]
+SFX D   0     ed         [aeiou]y
+
+SFX T N 4
+SFX T   0     st         e
+SFX T   y     iest       [^aeiou]y
+SFX T   0     est        [aeiou]y
+SFX T   0     est        [^ey]
+
+SFX R Y 4
+SFX R   0     r          e
+SFX R   y     ier        [^aeiou]y
+SFX R   0     er         [aeiou]y
+SFX R   0     er         [^ey]
+
+SFX Z Y 4
+SFX Z   0     rs         e
+SFX Z   y     iers       [^aeiou]y
+SFX Z   0     ers        [aeiou]y
+SFX Z   0     ers        [^ey]
+
+SFX S Y 4
+SFX S   y     ies        [^aeiou]y
+SFX S   0     s          [aeiou]y
+SFX S   0     es         [sxzh]
+SFX S   0     s          [^sxzhy]
+
+SFX P Y 3
+SFX P   y     iness      [^aeiou]y
+SFX P   0     ness       [aeiou]y
+SFX P   0     ness       [^y]
+
+SFX M Y 1
+SFX M   0     's         .
+
+SFX B Y 3
+SFX B   0     able       [^aeiou]
+SFX B   0     able       ee
+SFX B   e     able       [^aeiou]e
+
+SFX L Y 1
+SFX L   0     ment       .
+
 
 # Plural -A- (ão ães) - (l la) - (m ma) - (r ra)
 
